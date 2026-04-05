@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 🚀 FEATURED HERO
         { 
           id: "hero-featured",
-          src: "https://lh3.googleusercontent.com/u/0/d/12tmb_SM2iLL2DqHz-d5O0nh0gGH5auB4", 
+          src: "https://lh3.googleusercontent.com/d/12tmb_SM2iLL2DqHz-d5O0nh0gGH5auB4", 
           title: "MARCO 4K MASHUP", 
           subtitle: "Editorial Masterpiece - High Fidelity", 
           category: "Featured", 
@@ -23,19 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 🍿 MASHUP CUTS
         { 
-          src: "https://lh3.googleusercontent.com/u/0/d/1oaFvOn0WImCxbYsPSxr23uR_V1Mlj7-c", 
+          src: "https://lh3.googleusercontent.com/d/1oaFvOn0WImCxbYsPSxr23uR_V1Mlj7-c", 
           title: "Cinematic Mashup 2", 
           subtitle: "Dynamic Transition Mastery", 
           category: "Mashup Cuts" 
         },
         { 
-          src: "https://lh3.googleusercontent.com/u/0/d/1GZHjFJ52K8rS9wGRtBuckiIYcUOpp9MU", 
+          src: "https://lh3.googleusercontent.com/d/1GZHjFJ52K8rS9wGRtBuckiIYcUOpp9MU", 
           title: "Cinematic Mashup 3", 
           subtitle: "High-Energy Edit", 
           category: "Mashup Cuts" 
         },
         { 
-          src: "https://lh3.googleusercontent.com/u/0/d/11N0tXGcMYc7zCxbP5ppGrsVHX9rAy2Ou", 
+          src: "https://lh3.googleusercontent.com/d/11N0tXGcMYc7zCxbP5ppGrsVHX9rAy2Ou", 
           title: "Mashup Extra", 
           subtitle: "Bonus Cinematic Cut", 
           category: "Mashup Cuts" 
@@ -43,19 +43,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 🌟 SPECIAL PROJECTS
         { 
-          src: "https://lh3.googleusercontent.com/u/0/d/14sHYeKnrqWRcN-0oIKkc5CFvNmjEiuBo", 
+          src: "https://lh3.googleusercontent.com/d/14sHYeKnrqWRcN-0oIKkc5CFvNmjEiuBo", 
           title: "John Wick Cinematic", 
           subtitle: "The Baba Yaga - High Fidelity Edit", 
           category: "Special Projects" 
         },
         { 
-          src: "https://lh3.googleusercontent.com/u/0/d/10Cq1PXILORfojx9S4DisWe3F2MrcmFPV", 
+          src: "https://lh3.googleusercontent.com/d/10Cq1PXILORfojx9S4DisWe3F2MrcmFPV", 
           title: "Bullet Train Mashup", 
           subtitle: "Fast-Paced Editorial Flow", 
           category: "Special Projects" 
         },
         { 
-          src: "https://lh3.googleusercontent.com/u/0/d/1SKELRUMSZZd0bQl4hhBv0cNLDLmeGdp9", 
+          src: "https://lh3.googleusercontent.com/d/1SKELRUMSZZd0bQl4hhBv0cNLDLmeGdp9", 
           title: "Love Birds", 
           subtitle: "Emotional Visual Narrative", 
           category: "Special Projects" 
@@ -63,28 +63,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 🎥 VIRAL VIDEOS & REELS (Vertical)
         { 
-          src: "https://lh3.googleusercontent.com/u/0/d/1wk3npgZmM0IiS6DHT8pejpGxjZCPiVn5", 
+          src: "https://lh3.googleusercontent.com/d/1wk3npgZmM0IiS6DHT8pejpGxjZCPiVn5", 
           title: "Viral Reel 1", 
           subtitle: "Instagram Mastery", 
           category: "Viral Videos",
           type: "reel"
         },
         { 
-          src: "https://lh3.googleusercontent.com/u/0/d/1BK3T-pzfZ_eL8ws4bIr1WAr7LDMFlGtn", 
+          src: "https://lh3.googleusercontent.com/d/1BK3T-pzfZ_eL8ws4bIr1WAr7LDMFlGtn", 
           title: "Viral Reel 2", 
           subtitle: "High Velocity Edit", 
           category: "Viral Videos",
           type: "reel"
         },
         { 
-          src: "https://lh3.googleusercontent.com/u/0/d/1OqnV3-i4qi6hG_MJMAfuRD5dkgDfvxOt", 
+          src: "https://lh3.googleusercontent.com/d/1OqnV3-i4qi6hG_MJMAfuRD5dkgDfvxOt", 
           title: "Viral Reel 3", 
           subtitle: "Dynamic Transitions", 
           category: "Viral Videos",
           type: "reel"
         },
         { 
-          src: "https://lh3.googleusercontent.com/u/0/d/1iEy3yfUU3svLQdUU3FMMqHabLL0Nfd5V", 
+          src: "https://lh3.googleusercontent.com/d/1iEy3yfUU3svLQdUU3FMMqHabLL0Nfd5V", 
           title: "Viral Reel 4", 
           subtitle: "Impactful Cuts", 
           category: "Viral Videos",
@@ -93,19 +93,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 📺 IDENTITY & INTROS
         { 
-          src: "https://lh3.googleusercontent.com/u/0/d/1K_zaz5wgxUcjnveefFbz8jrdKfN07nka", 
+          src: "https://lh3.googleusercontent.com/d/1K_zaz5wgxUcjnveefFbz8jrdKfN07nka", 
           title: "Day with Sneha Shetty", 
           subtitle: "Professional Lifestyle Documentary", 
           category: "Identity & Intros" 
         },
         { 
-          src: "https://lh3.googleusercontent.com/u/0/d/1pIORgg65yF_q7_WZ4096SvT6fic2NoGL", 
+          src: "https://lh3.googleusercontent.com/d/1pIORgg65yF_q7_WZ4096SvT6fic2NoGL", 
           title: "Sneha Shetty Kohl", 
           subtitle: "Cinematic Identity Showcase", 
           category: "Identity & Intros" 
         },
         { 
-          src: "https://lh3.googleusercontent.com/u/0/d/18htlZ6XbaYzpaaQUphfiG0ko25kGs1ex", 
+          src: "https://lh3.googleusercontent.com/d/18htlZ6XbaYzpaaQUphfiG0ko25kGs1ex", 
           title: "Vijaya Raghavendra", 
           subtitle: "Celebrity Portfolio Montage", 
           category: "Identity & Intros" 
