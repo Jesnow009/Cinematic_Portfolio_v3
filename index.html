@@ -37,8 +37,15 @@
         <div class="video-overlay" style="position: absolute; top:0; left:0; width:100%; height:100%; background: radial-gradient(circle at center, transparent, rgba(8, 2, 13, 0.9)); z-index: 1;"></div>
         
         <div class="glow-obj"></div>
-                <!-- Hero Video Background - High Fidelity Stream -->
-        <video src="https://lh3.googleusercontent.com/d/12tmb_SM2iLL2DqHz-d5O0nh0gGH5auB4" autoplay loop muted playsinline class="hero-video" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; opacity: 0.6; filter: brightness(0.7); z-index: 0;"></video>
+        <!-- Hero YouTube Background - High Fidelity 4K -->
+        <div class="hero-video-wrap" style="position: absolute; top:0; left:0; width:100%; height:100%; overflow: hidden; pointer-events: none; z-index: 0;">
+            <iframe 
+                src="https://www.youtube.com/embed/9FDrKlWOojs?autoplay=1&mute=1&loop=1&playlist=9FDrKlWOojs&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&enablejsapi=1" 
+                frameborder="0" 
+                style="width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.6; filter: brightness(0.7) blur(1px) contrast(1.1);"
+                allow="autoplay; encrypted-media">
+            </iframe>
+        </div>
         
         <div class="container hero-content" style="z-index: 5;">
             <p class="subtitle animate-up">Creative Video Editor & Designer</p>

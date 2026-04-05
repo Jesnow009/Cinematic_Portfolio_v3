@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 🚀 FEATURED HERO
         { 
           id: "hero-featured",
-          src: "https://lh3.googleusercontent.com/d/12tmb_SM2iLL2DqHz-d5O0nh0gGH5auB4", 
+          src: "https://www.youtube.com/embed/9FDrKlWOojs?autoplay=1&mute=1&loop=1&playlist=9FDrKlWOojs&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&enablejsapi=1", 
           title: "MARCO 4K MASHUP", 
           subtitle: "Editorial Masterpiece - High Fidelity", 
           category: "Featured", 
@@ -118,15 +118,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Build Hero Section
     const hero = myVideos.find(v => v.isHero);
     if (hero) {
+        const isYouTube = hero.src.includes('youtube.com');
+        let heroMediaHTML = '';
+
+        if (isYouTube) {
+            heroMediaHTML = `
+                <div class="hero-video-wrap" style="position: absolute; top:0; left:0; width:100%; height:100%; overflow: hidden; pointer-events: none; z-index: 0;">
+                    <iframe 
+                        src="${hero.src}" 
+                        frameborder="0" 
+                        style="width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.6; filter: brightness(0.7) contrast(1.1);"
+                        allow="autoplay; encrypted-media">
+                    </iframe>
+                </div>`;
+        } else {
+            heroMediaHTML = `<video src="${hero.src}" autoplay loop muted playsinline class="hero-video-bg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6; filter: brightness(0.7);"></video>`;
+        }
+
         html += `
-            <div class="showcase-hero" style="background: #000; position: relative;">
-                <video src="${hero.src}" autoplay loop muted playsinline class="hero-video-bg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6; filter: brightness(0.7);"></video>
+            <div class="showcase-hero" style="background: #000; position: relative; overflow: hidden;">
+                ${heroMediaHTML}
                 <div class="hero-overlay" style="position: absolute; bottom: 15%; left: 5%; z-index: 10;">
                     <div class="hero-badge" style="background: #e50914; color: #fff; padding: 4px 12px; border-radius: 4px; font-weight: 800; font-size: 0.8rem; margin-bottom: 1rem; display: inline-block;">FEATURED CINEMATIC EDIT</div>
                     <h1 style="font-size: 5rem; font-weight: 900; line-height: 0.9; margin-bottom: 1rem; text-transform: uppercase; font-family: var(--font-heading);">${hero.title}</h1>
                     <p style="font-size: 1.4rem; color: rgba(255,255,255,0.7); margin-bottom: 2rem;">${hero.subtitle}</p>
                     <div style="display: flex; gap: 1rem;">
-                        <button class="btn btn-primary" onclick="this.closest('.showcase-hero').requestFullscreen()" style="padding: 1.2rem 3.5rem; border-radius: 30px;">Play Fullscreen</button>
+                        <button class="btn btn-primary" onclick="this.closest('.showcase-hero').querySelector('iframe')?.requestFullscreen()" style="padding: 1.2rem 3.5rem; border-radius: 30px;">Play Fullscreen</button>
                     </div>
                 </div>
                 <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 200px; background: linear-gradient(to top, #08020d, transparent); z-index: 5;"></div>
@@ -143,25 +160,42 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderCard(video) {
         const isReel = video.type === 'reel';
         const cardClass = isReel ? "showcase-card vertical" : "showcase-card horizontal";
+        const isYouTube = video.src.includes('youtube.com');
+
+        let videoHTML = '';
+        if (isYouTube) {
+            videoHTML = `
+                <div class="video-element-wrapper" style="width: 100%; height: 100%; overflow: hidden; position: relative;">
+                    <iframe src="${video.src}" 
+                        style="position: absolute; top:0; left:0; width:100%; height:100%; pointer-events: none;" 
+                        frameborder="0" allow="autoplay; encrypted-media"></iframe>
+                    <div style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 2;" 
+                         onclick="this.previousElementSibling.requestFullscreen()"></div>
+                </div>`;
+        } else {
+            videoHTML = `
+                <video src="${video.src}" loop muted playsinline class="video-element"></video>
+                <button class="center-play-btn" aria-label="Play"><svg viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></button>
+                <div class="player-controls">
+                    <div class="progress-container"><input type="range" class="progress-bar" min="0" max="100" value="0" step="0.1"></div>
+                    <div class="controls-main">
+                        <div class="controls-left">
+                            <button class="control-btn play-pause-btn"><svg width="20" height="20" class="icon-play" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></button>
+                            <div class="volume-container">
+                                <button class="control-btn mute-btn"><svg width="20" height="20" class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg></button>
+                            </div>
+                        </div>
+                        <div class="controls-right">
+                            <button class="control-btn fullscreen-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></button>
+                        </div>
+                    </div>
+                </div>`;
+        }
+
         return `
             <div class="${cardClass} reveal">
                 <div class="project-img custom-player" data-behavior="hover">
-                    <video src="${video.src}" loop muted playsinline class="video-element"></video>
-                    <button class="center-play-btn" aria-label="Play"><svg viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></button>
-                    <div class="player-controls">
-                        <div class="progress-container"><input type="range" class="progress-bar" min="0" max="100" value="0" step="0.1"></div>
-                        <div class="controls-main">
-                            <div class="controls-left">
-                                <button class="control-btn play-pause-btn"><svg width="20" height="20" class="icon-play" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></button>
-                                <div class="volume-container">
-                                    <button class="control-btn mute-btn"><svg width="20" height="20" class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg></button>
-                                </div>
-                            </div>
-                            <div class="controls-right">
-                                <button class="control-btn fullscreen-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></button>
-                            </div>
-                        </div>
-                    </div>
+                    ${videoHTML}
                 </div>
                 <div class="card-metadata" style="padding: 15px 5px;">
                     <h3 style="font-size: 1.2rem; margin-bottom: 5px; color: #fff;">${video.title}</h3>
